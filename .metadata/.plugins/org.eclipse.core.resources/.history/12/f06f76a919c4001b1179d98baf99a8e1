@@ -1,0 +1,27 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class ImageDrawEx extends JFrame{
+	ImageDrawEx(){
+	setTitle("도형 색 채우기");
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setContentPane(new MyPanel());
+	
+	setSize(500,500);
+	setVisible(true);
+	}
+	
+	class MyPanel extends JPanel{
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			
+			ImageIcon icon = new ImageIcon("images/Lebron.jpg");
+			Image img = icon.getImage();
+			
+			g.drawImage(img, 20,20,this);
+		}
+	}
+	public static void main(String[] args) {
+		new ImageDrawEx();
+	}
+}

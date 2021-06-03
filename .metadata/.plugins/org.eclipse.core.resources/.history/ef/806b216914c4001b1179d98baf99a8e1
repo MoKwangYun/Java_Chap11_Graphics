@@ -1,0 +1,28 @@
+import java.awt.*;
+import javax.swing.*;
+
+
+public class DrawStringEx extends JFrame{
+	DrawStringEx(){
+		setTitle("JPanel¿¡ String draw");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setContentPane(new MyPanel());
+		
+		setSize(500,500);
+		setVisible(true);
+	}
+	
+	class MyPanel extends JPanel{
+		public void paintComponent(Graphics g){
+			super.paintComponent(g);
+			g.setColor(Color.BLUE);
+			g.setFont(new Font("Time New Roman", Font.ITALIC, 50));
+			g.drawString("Hello",30,30);
+		
+		}
+	}
+	
+	public static void main(String[] args) {
+		new DrawStringEx();
+	}
+}
